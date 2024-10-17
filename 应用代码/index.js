@@ -162,20 +162,4 @@ function fn8(arr) {
 }
 
 let nestedArray = [1, [2, [3, [4]], 5]];
-console.log(fn8(nestedArray)); // 输出 [1, 2, 3, 4, 5]
-
-// 链式调用
-class Class1 {
-  constructor() {
-    this.value = 0;
-  }
-
-  add(value) {
-    this.value += value;
-    return this;
-  }
-}
-
-const class1 = new Class1();
-
-// console.log(class1.add(1).add(2).value);
+// console.log(fn8(nestedArray)); // 输出 [1, 2, 3, 4, 5]
