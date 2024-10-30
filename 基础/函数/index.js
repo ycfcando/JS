@@ -11,3 +11,4 @@ function fn(a) {
   // 函数入参
   console.log(a);
 }
+fn(1);

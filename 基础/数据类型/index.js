@@ -111,6 +111,15 @@ function fn2() {
       a.call(Symbol()),
       a.call(1n)
     );
+
+    // 自定义构造函数需要原型上定义Symbol.toStringTag属性才能准确判断
+    function FNConstructor1() {}
+    FNConstructor1.prototype[Symbol.toStringTag] = "FNConstructor1";
+    const fn1 = new FNConstructor1();
+    console.log(
+      "自定义构造函数需要原型上定义Symbol.toStringTag属性才能准确判断",
+      a.call(fn1)
+    );
   })();
 }
 fn2();
