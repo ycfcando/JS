@@ -1,8 +1,6 @@
 // 1.构造函数实现
 class Class1 {
-  constructor() {
-    this.value = 0;
-  }
+  value = 0;
 
   add(value) {
     this.value += value;
@@ -12,7 +10,7 @@ class Class1 {
 
 const class1 = new Class1();
 
-// console.log(class1.add(1).add(2).value);
+console.log(class1.add(1).add(2).value);
 
 // 2.手动返回对象实现
 const add = (v) => {
