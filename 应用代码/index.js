@@ -1,25 +1,3 @@
-// 将数字每千分位用逗号隔开
-function fn1(num) {
-  const str = num.toString();
-  const ary = str.split(".");
-  const strInt = ary[0];
-  const result = [];
-  let count = 0;
-
-  for (let i = strInt.length - 1; i >= 0; i--) {
-    result.unshift(str[i]);
-    count += 1;
-
-    if (count % 3 === 0) {
-      result.unshift(",");
-    }
-  }
-
-  return result.join("").concat(".").concat(ary[1]);
-}
-
-// console.log(fn1(1234567.89));
-
 // 防抖
 function fn2(cb, s, immediate) {
   let timer = null;
@@ -118,19 +96,6 @@ function fn5(obj, newObj = {}) {
 // const newObj = fn5(obj);
 // newObj.a.d.e = 11;
 // console.log(obj, newObj);
-
-// 实现new操作符
-function fn6(c, ...arg) {
-  if (typeof c !== "function") {
-    return;
-  }
-
-  const obj = Object.create(c.prototype, {});
-
-  const result = c.apply(obj, arg);
-
-  return typeof result === "object" ? result : obj;
-}
 
 // 柯里化函数
 function fn7(fn) {
