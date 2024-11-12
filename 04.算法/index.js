@@ -1,39 +1,3 @@
-// 数组去重
-function fn1(ary) {
-  const result = [];
-
-  ary.forEach((value) => {
-    const judge = result.find((v) => v === value);
-    if (judge === undefined) {
-      result.push(value);
-    }
-  });
-
-  return result;
-}
-
-// console.log(fn1([1, 3, 5, 5, 5]));
-
-// 数组排序
-function fn2(ary) {
-  const cloneAry = [...ary];
-
-  cloneAry.forEach((...arg) => {
-    for (let i = 0; i < cloneAry.length - arg[1] - 1; i++) {
-      const prev = cloneAry[i];
-      const next = cloneAry[i + 1];
-      if (prev > next) {
-        cloneAry[i] = next;
-        cloneAry[i + 1] = prev;
-      }
-    }
-  });
-
-  return cloneAry;
-}
-
-// console.log(fn2([9, 8, 7, 6, 5, 4, 3, 2, 1]));
-
 // 列表转树
 function fn3(ary) {
   const map = {};
