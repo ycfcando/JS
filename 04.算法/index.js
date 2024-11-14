@@ -1,35 +1,3 @@
-// 列表转树
-function fn3(ary) {
-  const map = {};
-  const root = [];
-
-  ary.forEach((value) => {
-    map[value.id] = { ...value, children: [] };
-  });
-
-  ary.forEach((value) => {
-    if (value.parentId === null) {
-      root.push(map[value.id]);
-    } else {
-      map[value.parentId].children.push(map[value.id]);
-    }
-  });
-
-  return root;
-}
-
-const list = [
-  { id: 1, name: "Node 1", parentId: null },
-  { id: 2, name: "Node 1.1", parentId: 1 },
-  { id: 3, name: "Node 1.2", parentId: 1 },
-  { id: 4, name: "Node 2", parentId: null },
-  { id: 5, name: "Node 2.1", parentId: 4 },
-  { id: 6, name: "Node 2.2", parentId: 4 },
-  { id: 7, name: "Node 2.1.1", parentId: 5 },
-];
-
-// console.log(fn3(list));
-
 // 广度优先遍历
 function fn4(tree, cb) {
   const queue = [];
