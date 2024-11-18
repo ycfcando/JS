@@ -20,7 +20,7 @@ function aryToTree(arg) {
   arg.forEach((item) => {
     const parent = hashTable[item.parentId];
     if (parent) {
-      parent.children.push(item);
+      parent.children.push(hashTable[item.id]);
     }
     if (!item.parentId) {
       results.push(hashTable[item.id]);
