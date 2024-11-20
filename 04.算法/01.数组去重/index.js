@@ -1,9 +1,11 @@
 /* 数组去重 */
-function aryEli(ary) {
+function aryEli(ary, judgeCb) {
   const results = [];
 
   ary.forEach((value) => {
-    const judge = results.find((v) => v === value);
+    const judge = results.find((v) =>
+      judgeCb ? judgeCb(v, value) : v === value
+    );
     if (judge === undefined) {
       results.push(value);
     }
